@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="8278" started-at="2021-10-17T19:26:30 PDT" finished-at="2021-10-17T19:26:39 PDT">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="8278" started-at="2021-10-17T19:26:30 PDT" finished-at="2021-10-17T19:26:39 PDT">
+      <class name="testFile">
+        <test-method status="PASS" signature="test_01()[pri:0, instance:testFile@57baeedf]" name="test_01" duration-ms="8253" started-at="2021-10-17T19:26:30 PDT" finished-at="2021-10-17T19:26:39 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_01 -->
+      </class> <!-- testFile -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
