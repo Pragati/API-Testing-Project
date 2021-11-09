@@ -54,7 +54,7 @@
                     <systemPropertyVariables>
                         <s4_base_url>https://svcgcpdev01ss.lab-us.gcpint.ariba.com</s4_base_url>
                     </systemPropertyVariables>
-                    <systemPropertiesFile>/Users/pragatisahu/ariba/TestNGProject1/src/test/resources/testData/eventCreation.properties</systemPropertiesFile>
+                    <systemPropertiesFile>src/test/resources/testData/eventCreation.properties</systemPropertiesFile>
                 </configuration>
             </plugin>
         </plugins>
