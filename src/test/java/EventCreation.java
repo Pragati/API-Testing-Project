@@ -5,9 +5,9 @@ import static io.restassured.RestAssured.*;
 public class EventCreation {
 
 
-    String token = "Bearer 30ced5e1-495f-43c5-bf0d-1bf7f3d84772";
-    String eventName = "TestEvent" + System.currentTimeMillis();
-    String updatedTitle = eventName + "_updatedTitle" + System.currentTimeMillis();
+    String token = "Bearer a4368ad0-fe9f-4901-a985-c7a6581acf82";
+    String eventName = System.getProperty("eventName") + System.currentTimeMillis();
+    String updatedTitle = System.getProperty("updatedTitle") + System.currentTimeMillis();
     String docID = "";
     String baseUri = System.getProperty("s4_base_url");
 
@@ -17,10 +17,10 @@ public class EventCreation {
 
     public void getTemplateDetail() {
         //getTemplate()
-        given().log().all().queryParam("user", "customersupportadmin")
-                .queryParam("passwordAdapter", "PasswordAdapter1")
+        given().log().all().queryParam("user", System.getProperty("user"))
+                .queryParam("passwordAdapter", System.getProperty("passwordAdapter"))
                 .queryParam("realm", "s4svall-2")
-                .queryParam("ids", "WS3555676")
+                .queryParam("ids", System.getProperty("templateDocumentInternalId"))
                 .header("Content-Type", "application/json").header("Authorization", token)
                 .when().get(baseUri+"/Sourcing/sourcing-event/v2/events/templates")
                 .then().log().all().assertThat().statusCode(200);
@@ -28,8 +28,8 @@ public class EventCreation {
     }
 
     public void createEvent() {
-        String createEvent = given().log().all().queryParam("user", "customersupportadmin")
-                .queryParam("passwordAdapter", "PasswordAdapter1")
+        String createEvent = given().log().all().queryParam("user", System.getProperty("user"))
+                .queryParam("passwordAdapter", System.getProperty("passwordAdapter"))
                 .queryParam("realm", "s4svall-2")
                 .header("Content-Type", "application/json").header("Authorization", token)
                 .body("{\n" +
@@ -50,9 +50,9 @@ public class EventCreation {
 
     public void updateEvent() {
         //updateEvent()
-        given().log().all().queryParam("user", "customersupportadmin")
+        given().log().all().queryParam("user", System.getProperty("user"))
+                .queryParam("passwordAdapter", System.getProperty("passwordAdapter"))
                 .pathParam("docID", docID)
-                .queryParam("passwordAdapter", "PasswordAdapter1")
                 .queryParam("realm", "s4svall-2")
                 .header("Content-Type", "application/json").header("Authorization", token)
                 .body("{\n" +
